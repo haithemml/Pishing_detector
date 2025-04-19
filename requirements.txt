@@ -1,0 +1,6 @@
+flask
+tensorflow
+tensorflow_hub
+tensorflow_text
+scikit-learn
+numpy
