@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détection de Phishing</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Détection de Phishing</h1>
+    <form method="POST">
+        <label>Contenu de l'e-mail :</label><br>
+        <textarea name="email_content" rows="6" cols="60" required></textarea><br><br>
+
+        <label>Nombre de mots :</label><input name="num_words" type="number" step="any"><br>
+        <label>Mots uniques :</label><input name="num_unique_words" type="number" step="any"><br>
+        <label>Stopwords :</label><input name="num_stopwords" type="number" step="any"><br>
+        <label>Liens :</label><input name="num_links" type="number" step="any"><br>
+        <label>Domaines uniques :</label><input name="num_unique_domains" type="number" step="any"><br>
+        <label>Emails :</label><input name="num_email_addresses" type="number" step="any"><br>
+        <label>Fautes d'orthographe :</label><input name="num_spelling_errors" type="number" step="any"><br>
+        <label>Mots urgents :</label><input name="num_urgent_keywords" type="number" step="any"><br><br>
+
+        <button type="submit">Analyser</button>
+    </form>
+
+    {% if prediction %}
+    <h2>Résultat : {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
